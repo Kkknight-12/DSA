@@ -5,13 +5,11 @@ import java.util.Scanner;
 public class StarPattern {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-//        int n = 4;
-        int outputNum = 1;
+//        int n = input.nextInt();
+        int n = 4;
         int rowNumber = 1;
 
         while( rowNumber <= n ) {
-            int count = 1;
             int space = n - rowNumber;
 
             while( space > 0 ){
@@ -19,18 +17,25 @@ public class StarPattern {
                 space--;
             }
 
-            if(rowNumber > 1 ) {
-                while (count < rowNumber + outputNum) {
-                    System.out.print("*");
-                    count += 1;
-                }
-            }else{
-                System.out.print("*");
+            int j = 1;
+            int p = rowNumber;
+            while ( j <= rowNumber) {
+                System.out.print(p);
+                p++;
+                j++;
             }
+
+            p = p - 2;
+            int l = 1;
+            while (l <= rowNumber - 1){
+                System.out.print(p);
+                p--;
+                l++;
+            }
+
 
             System.out.println();
             rowNumber += 1;
-            outputNum += 1;
         }
     }
 }
